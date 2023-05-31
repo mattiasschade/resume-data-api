@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   delete "/skills/:id" => "skills#destroy"
 
 
+  get "/capstones" => "capstones#index"
+
 
 end
