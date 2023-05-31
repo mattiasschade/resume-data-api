@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/skills/:id" => "skills#show" 
   post "/skills" => "skills#create"
   patch "/skills/:id" => "skills#update"
+  delete "/skills/:id" => "skills#destroy"
 
 
 
