@@ -15,4 +15,9 @@ class SkillsController < ApplicationController
     render :show
   end
 
+  def show
+    @skill = Skill.find_by(id: params[:id])
+    render :show
+  end
+
 end
