@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "/skills" => "skills#index"
   get "/skills/:id" => "skills#show" 
   post "/skills" => "skills#create"
+  patch "/skills/:id" => "skills#update"
 
 
 
