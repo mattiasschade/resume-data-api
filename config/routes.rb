@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  post "/users" => "users#create"
+  post "/sessions" => "sessions#create"
+
+
+  # get "/students" => "students#index"
+  # get "/students/:id" => "students#show"
+  # post "/students" => "students#create"
 
   get "/skills" => "skills#index"
   get "/skills/:id" => "skills#show" 
@@ -17,6 +24,9 @@ Rails.application.routes.draw do
   get "/students" => "students#index"
   get "/students/:id" => "students#show"
 
+
+
+  resources :students
   resources :educations
   resources :experiences
   
