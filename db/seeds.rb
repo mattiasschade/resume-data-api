@@ -38,3 +38,18 @@ end
   experience.save
 end
 
+50.times do
+  skill = Skill.new(
+    skill_name: FFaker::Skill.tech_skills
+  )
+  skill.save
+end
+
+50.times do 
+  capstone = Capstone.new(
+    name: FFaker::Product.brand,
+    description: FFaker::AWS.product_description,
+    url: FFaker::Image.url,
+  )
+  capstone.save
+end
