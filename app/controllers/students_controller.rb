@@ -57,4 +57,11 @@ class StudentsController < ApplicationController
     )
     render :show
   end
+
+  def destroy
+    @student = Student.find(params[:id])
+    @student.destroy
+
+    render json: {message: "Student has been successfully deleted."}
+  end
 end
