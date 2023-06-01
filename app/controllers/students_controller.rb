@@ -23,7 +23,11 @@ class StudentsController < ApplicationController
       phone_number: params[:phone_number],
       short_bio: params[:short_bio],
       linkedin: params[:linkedin],
-      twitter: params
+      twitter: params[:twitter],
+      personal_website: params[:personal_website],
+      online_resume: params[:online_resume],
+      github: params[:github],
+      photo: params[:photo],
     )
     if @student.save
       render :show
@@ -31,4 +35,6 @@ class StudentsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  
 end
