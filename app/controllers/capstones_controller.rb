@@ -9,4 +9,17 @@ class CapstonesController < ApplicationController
     render :show
   end
 
+  def new
+    @capstone = Capstone.new
+    render :new
+  end
+  def create
+    @capstone = Capstone.create(
+      name: params[:name],
+      description: params[:description],
+      url: params[:url]
+    )
+    render :show
+  end
+
 end
