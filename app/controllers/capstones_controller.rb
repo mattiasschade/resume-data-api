@@ -22,4 +22,18 @@ class CapstonesController < ApplicationController
     render :show
   end
 
+  def edit
+    @capstone = Capstone.find_by(id: params[:id])
+    render :edit
+  end
+  def update
+    @capstone = Capstone.find_by(id: params[:id])
+    @capstone.update(
+      name: params[:name],
+      description: params[:description],
+      url: params[:url],
+    )
+    render :show
+  end
+
 end
