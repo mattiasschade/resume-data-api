@@ -32,4 +32,10 @@ class ExperiencesController < ApplicationController
     )
     render :show
   end
+
+  def destroy
+    @experience = Experience.find_by(id: params[:id])
+    @experience.destroy
+    render json: { message: "experience destroyed successfully" }
+  end
 end
