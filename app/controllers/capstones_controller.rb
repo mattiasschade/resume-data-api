@@ -36,4 +36,10 @@ class CapstonesController < ApplicationController
     render :show
   end
 
+  def destroy
+    @capstone = Capstone.find_by(id: params[:id])
+    @capstone.destroy
+    render json: {message: "Capstone deleted"}
+  end
+
 end
