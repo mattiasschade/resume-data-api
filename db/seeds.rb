@@ -8,4 +8,33 @@ require 'ffaker'
   student.save
 end
 
+50.times do
+  end_date = FFaker::Time.date
+  start_date = FFaker::Time.between(end_date - 4.years, end_date)
+
+  education = Education.new(
+    start_date: start_date,
+    end_date: end_date,
+    degree: FFaker::Education.degree,
+    university_name: FFaker::Education.school,
+    details: FFaker::Lorem.paragraph
+  )
+
+  education.save
+end
+
+50.times do
+  end_date = FFaker::Time.date
+  start_date = FFaker::Time.between(end_date - 4.years, end_date)
+
+  experience = Experience.new(
+    start_date: start_date,
+    end_date: end_date,
+    job_title: FFaker::Company.position,
+    company_name: FFaker::Company.name,
+    details: FFaker::Lorem.paragraph
+  )
+
+  experience.save
+end
 
