@@ -17,7 +17,7 @@ class EducationsController < ApplicationController
       degree: params[:degree],
       university_name: params[:university_name],
       details: params[:details],
-      student_id: current_user.id
+      student_id: params[:student_id]
     )
     if @education.save
       render :show
