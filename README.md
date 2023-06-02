@@ -2,13 +2,11 @@
 
 ```
 npm install puppeteer
-```
-
-```
 bundle install
 ```
 
-### If Grover::JavaScript::Error ... pops up uninstall puppeteer then reinstall it
+### If (Grover::JavaScript::Error) ... 
+####  {uninstall puppeteer then reinstall it}
 
 ```
 npm uninstall puppeteer
