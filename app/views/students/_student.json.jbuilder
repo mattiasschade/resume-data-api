@@ -38,4 +38,6 @@ if student.capstone.present?
     json.description student.capstone.description
     json.url student.capstone.url
   end
+else
+  json.capstone nil
 end

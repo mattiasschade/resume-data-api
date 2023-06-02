@@ -8,12 +8,17 @@ class SkillsController < ApplicationController
     @skill = Skill.new
     render :new
   end
+
   def create
     @skill = Skill.create(
       skill_name: params[:skill_name],
-      student_id: current_user.id
+      student_id: params[:student_id]
     )
-    render :show
+    if @skill.save
+      render :show
+    else
+      render json: { errors: @experience.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -28,7 +33,7 @@ class SkillsController < ApplicationController
   def update
     @skill = Skill.find_by(id: params[:id])
     @skill.skill_name = params[:skill_name] || @skill.skill_name
-    student_id: params[:student_id] || @skill.student_id
+    @student_id = params[:student_id] || @skill.student_id
 
     @skill.save
     render :show
