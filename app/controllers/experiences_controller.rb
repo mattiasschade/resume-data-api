@@ -16,7 +16,7 @@ class ExperiencesController < ApplicationController
       job_title: params[:job_title],
       company_name: params[:company_name],
       details: params[:details],
-      student_id: current_user.id
+      student_id: params[:student_id]
     )
     
     if @experience.save
