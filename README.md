@@ -1,24 +1,15 @@
-# README
+### Install Puppeteer and Dependencies:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+npm install puppeteer
+```
 
-Things you may want to cover:
+```
+bundle install
+```
 
-* Ruby version
+### If puppeteer related error uninstall puppeteer then reinstall it
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+npm uninstall puppeteer
+```

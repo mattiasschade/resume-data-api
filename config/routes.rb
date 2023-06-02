@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   get "/students" => "students#index"
   get "/students/:id" => "students#show"
 
-
+  get '/generate-pdf', to: 'pdfs#generate', as: 'generate_pdf'
 
   resources :students
   resources :educations
