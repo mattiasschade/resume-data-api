@@ -24,7 +24,6 @@ class EducationsController < ApplicationController
       render json: {errors: @education.errors.full_messages}, status: :unprocessable_entity
     end
   end
-  end
 
   def update
     @education = Education.find_by(id: params[:id])

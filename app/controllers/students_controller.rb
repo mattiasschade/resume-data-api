@@ -42,18 +42,17 @@ class StudentsController < ApplicationController
 
   def update
     @student = Student.find_by(id: params[:id])
-   
-      @student.first_name = params[:first_name] || @student.first_name
-      @student.last_name = params[:last_name] || @student.last_name
-      @student.email = params[:email] || @student.email
-      @student.phone_number = params[:phone_number] || @student.phone_number
-      @student.short_bio = params[:short_bio] || @student.short_bio
-      @student.linkedin = params[:linkedin] || @student.linkedin 
-      @student.twitter = params[:twitter] || @student.twitter
-      @student.personal_website = params[:personal_website] || @student.personal_website
-      @student.online_resume = params[:online_resume] || @student.online_resume
-      @student.github = params[:github] || @student.github
-      @student.photo = params[:photo] || @student.photo
+    @student.first_name = params[:first_name] || @student.first_name
+    @student.last_name = params[:last_name] || @student.last_name
+    @student.email = params[:email] || @student.email
+    @student.phone_number = params[:phone_number] || @student.phone_number
+    @student.short_bio = params[:short_bio] || @student.short_bio
+    @student.linkedin = params[:linkedin] || @student.linkedin 
+    @student.twitter = params[:twitter] || @student.twitter
+    @student.personal_website = params[:personal_website] || @student.personal_website
+    @student.online_resume = params[:online_resume] || @student.online_resume
+    @student.github = params[:github] || @student.github
+    @student.photo = params[:photo] || @student.photo
     
     @student.save
     render :show
