@@ -55,6 +55,7 @@ class StudentsController < ApplicationController
       github: params[:github],
       photo: params[:photo],
     )
+    @student.save
     render :show
   end
 
