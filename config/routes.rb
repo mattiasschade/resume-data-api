@@ -16,6 +16,12 @@ Rails.application.routes.draw do
   patch "/capstones/:id" => "capstones#update"
   delete "/capstones/:id" => "capstones#destroy"
 
+
+  get "/students" => "students#index"
+  get "/students/:id" => "students#show"
+
+  get '/generate-pdf', to: 'pdfs#generate', as: 'generate_pdf'
+
   resources :students
   resources :educations
   resources :experiences

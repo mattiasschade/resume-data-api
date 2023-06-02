@@ -82,6 +82,9 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    combine_pdf (1.0.23)
+      matrix
+      ruby-rc4 (>= 0.1.5)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
@@ -92,6 +95,12 @@ GEM
     ffaker (2.21.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    grover (1.1.5)
+      combine_pdf (~> 1.0)
+      nokogiri (~> 1.0)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.13.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.6)
@@ -118,6 +127,7 @@ GEM
     mini_mime (1.1.2)
     minitest (5.18.0)
     msgpack (1.7.1)
+    multi_xml (0.6.0)
     net-imap (0.3.4)
       date
       net-protocol
@@ -173,6 +183,7 @@ GEM
     reline (0.3.4)
       io-console (~> 0.5)
     rexml (3.2.5)
+    ruby-rc4 (0.1.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.9.1)
       rexml (~> 3.2, >= 3.2.5)
@@ -224,6 +235,8 @@ DEPENDENCIES
   capybara
   debug
   ffaker
+  grover
+  httparty
   importmap-rails
   jbuilder
   jwt
