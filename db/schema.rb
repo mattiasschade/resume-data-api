@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_31_232014) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_01_201346) do
   create_table "capstones", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "student_id"
   end
 
   create_table "educations", force: :cascade do |t|
@@ -27,6 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_232014) do
     t.text "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "student_id"
   end
 
   create_table "experiences", force: :cascade do |t|
@@ -37,10 +39,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_232014) do
     t.text "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "student_id"
   end
 
   create_table "skills", force: :cascade do |t|
     t.string "skill_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "student_skills", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "skill_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
