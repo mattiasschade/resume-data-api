@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_02_184612) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_02_202429) do
   create_table "capstones", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -46,8 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_02_184612) do
     t.string "skill_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "student_id", null: false
-    t.index ["student_id"], name: "index_skills_on_student_id"
+    t.integer "student_id"
   end
 
   create_table "student_skills", force: :cascade do |t|
@@ -81,5 +80,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_02_184612) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "skills", "students"
 end
