@@ -27,6 +27,7 @@ class SkillsController < ApplicationController
   def update
     @skill = Skill.find_by(id: params[:id])
     @skill.skill_name = params[:skill_name] || @skill.skill_name
+    @skill.save
     render :show
   end
 
