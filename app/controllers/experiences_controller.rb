@@ -18,7 +18,11 @@ class ExperiencesController < ApplicationController
       company_name: params[:company_name],
       details: params[:details],
     )
-    render :show
+    if @experience.save
+      render :show
+    else
+      render json: {errors: @experience.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -30,6 +34,7 @@ class ExperiencesController < ApplicationController
       company_name: params[:company_name] || @experience.company_name,
       details: params[:details] || @experience.details,
     )
+    @experience.save
     render :show
   end
 

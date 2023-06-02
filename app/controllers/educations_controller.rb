@@ -18,7 +18,12 @@ class EducationsController < ApplicationController
       university_name: params[:university_name],
       details: params[:details],
     )
-    render :show
+    if @education.save
+      render :show
+    else
+      render json: {errors: @education.errors.full_messages}, status: :unprocessable_entity
+    end
+  end
   end
 
   def update
@@ -30,6 +35,7 @@ class EducationsController < ApplicationController
       university_name: params[:university_name] || @education.university_name,
       details: params[:details] || @education.details,
     )
+    @education.save
     render :show
   end
 

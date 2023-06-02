@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  post "/users" => "users#create"
+  resources :users
+  # post "/users" => "users#create"
   post "/sessions" => "sessions#create"
 
   get "/skills" => "skills#index"
@@ -18,5 +19,6 @@ Rails.application.routes.draw do
   resources :students
   resources :educations
   resources :experiences
+  
   
 end
