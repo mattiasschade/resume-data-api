@@ -3,5 +3,5 @@ class Student < ApplicationRecord
   has_one :capstone
   has_many :educations
   has_many :experiences
-  has_many :skills, through: :student_skills
+  has_many :skills
 end

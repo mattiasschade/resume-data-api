@@ -13,11 +13,13 @@ class CapstonesController < ApplicationController
     @capstone = Capstone.new
     render :new
   end
+
   def create
     @capstone = Capstone.create(
       name: params[:name],
       description: params[:description],
       url: params[:url]
+      student_id: current_user.id
     )
     render :show
   end
@@ -26,12 +28,14 @@ class CapstonesController < ApplicationController
     @capstone = Capstone.find_by(id: params[:id])
     render :edit
   end
+
   def update
     @capstone = Capstone.find_by(id: params[:id])
     @capstone.update(
       name: params[:name],
       description: params[:description],
       url: params[:url],
+      student_id: params[:student_id] || @capstone.student_id
     )
     render :show
   end
