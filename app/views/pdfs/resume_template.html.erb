@@ -1,35 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Resume</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #F7F7F7;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;  
+}
+
+body {
+  min-height: 100%;  
+  background: #eee;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  color: #222;
+  font-size: 14px;
+  line-height: 26px;
+  padding-bottom: 50px;
     }
 
+.container {
+  max-width: 700px;   
+  background: #fff;
+  margin: 0px auto 0px; 
+  padding: 40px;
+  margin-top: 50px;
+}
+
+.form {
+  max-width: 700px;   
+  background: #fff;
+  margin: 0px auto 0px; 
+  box-shadow: 0.5px 0.5px 0.5px #DAD7D7;
+  margin-top: 20px;
+  border-radius: 5px;   
+}
+
+.section-header {
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #666;
+    border-bottom: 2px solid #677;
+}
     h1 {
       text-align: center;
       color: #333;
       font-size: 40px;
     }
 
+    .header {
+      margin-bottom: 30px;
+  
+        .full-name {
+          font-size: 45px;
+          text-transform: uppercase;
+          margin-bottom: 5px;
+    }
+  
+    .first-name {
+        font-weight: 700;
+    }
+  
+    .last-name {
+        font-weight: 300;
+    }
+  
+    .contact-info {
+        margin-bottom: 20px;
+    }
+  
+    .email ,
+    .phone {
+        color: #999;
+        font-weight: 300;
+    } 
+  
+    .separator {
+        height: 10px;
+        display: inline-block;
+        border-left: 2px solid #999;
+        margin: 0px 10px;
+  }
+  
+    .position {
+        font-weight: bold;
+        display: inline-block;
+        margin-right: 10px;
+        text-decoration: underline;
+  }
+}
     .section {
       margin-bottom: 20px;
     }
 
-    .section-header {
-      margin-bottom: 10px;
-      color: #666;
-    }
 
-    .section-content {
-      color: #333;
-    }
 
     .section-content ul {
       margin: 0;
@@ -57,69 +130,123 @@
       color: #FFF;
       border-radius: 4px;
     }
+
+
   </style>
 </head>
 <body>
- <!-- NAME -->
-  <h1><%= data['first_name'] %></h1>
-  <h1><%= data['last_name'] %></h1>
 
- <!-- BIO -->
-  <div class="section">
-    <h2 class="section-header">Bio</h2>
-    <p class="section-content"><%= data['short_bio'] %></p>
-  </div>
 
- <!-- SKILLS -->
-  <div class="section">
-    <h2 class="section-header">Skills</h2>
-    <div class="section-content skills">
-      <%# <span class="skill"><%= data['skills']</span> %>
-      <!-- Add more skills here -->
+<!-- HEADER (NAME) -->
+<div class="container">
+    <div class="header">
+        <div class="full-name">
+        <span class="first-name"><%= data['first_name'] %></span> 
+        <span class="last-name"><%= data['last_name'] %></span>
     </div>
-  </div>
+
+        <!-- contact -->
+        <div class="contact-info">
+            <span class="email">Email: </span>
+            <span class="email-val"><%= data['email'] %></span>
+            <span class="separator"></span>
+            <span class="phone">Phone: </span>
+            <span class="phone-val"><%= data['phone_number'] %></span>
+            <span class="separator"></span>
+            <span class="phone">LinkedIn: </span>
+            <span class="phone-val"><%= data['linkedin'] %></span>
+            <span class="separator"></span>
+            <span class="phone">GitHub: </span>
+            <span class="phone-val"><%= data['github'] %></span>
+            <span class="separator"></span>
+            <span class="phone">Twitter: </span>
+            <span class="phone-val"><%= data['twitter'] %></span>
+            <span class="separator"></span>
+            <span class="phone">Personal Website: </span>
+            <span class="phone-val"><%= data['personal_website'] %></span>
+
+        </div>
+
+        <!-- bio -->
+        <div class="about">
+            <span class="position">Software Engineer </span>
+            <span class="desc">
+                <%= data['short_bio'] %>
+            </span>
+        </div>
+    </div>
+</div>
+
+<!-- SKILLS -->
+<div class="form">
+    <div class="header">
+        <div class="section">
+            <h2 class="section-header">Skills</h2>
+            <div class="section-content skills">
+            <ul>
+                <li>Insert Dynamic Skills Here</li>
+            </ul>
+            <%# <span class="skill"><%= data['skills']</span> %>
+            <!-- Add more skills here -->
+            </div>
+        </div>
+    </div>
+</div>
+
 
  <!-- PROJECTS -->
-  <div class="section">
-    <h2 class="section-header">Projects</h2>
-    <div class="section-content">
-      <h3>[Project Name]</h3>
-      <p><em>[Description]</em></p>
-      <%# <ul>
-        <li>Implemented [feature] using [technology/stack].</li>
-        <li>Collaborated with [team/colleagues] to deliver [specific outcome].</li>
-        <li>Ensured code quality through [code review/testing].</li>
-      </ul> %>
+<div class="form">
+    <div class="header">
+        <div class="section">
+            <h2 class="section-header">Coding Projects</h2>
+            <div class="section-content">
+            <h3>[Insert Dynamic Project Names Here]</h3>
+            <p><em>[Insert Dynamic Description Here]</em></p>
+            <%# <ul>
+                INSERT DYNAMIC PROJECT DESCRIPTIONS HERE under li of course
+                <li>Implemented [feature] using [technology/stack].</li>
+                <li>Collaborated with [team/colleagues] to deliver [specific outcome].</li>
+                <li>Ensured code quality through [code review/testing].</li>
+            </ul> %>
+            </div>
+        </div>
     </div>
-
-    <!-- Add more project sections if applicable -->
+</div>
+            <!-- Add more project sections if applicable -->
 
  <!-- EDUCATION -->
-  <div class="section">
-    <h2 class="section-header">Education</h2>
-    <div class="section-content">
-      <h3>Bachelor of Science in Computer Science, [University Name]</h3>
-      <p><em>[Year]</em></p>
+<div class="form">
+    <div class="header">
+        <div class="section">
+            <h2 class="section-header">Education</h2>
+            <div class="section-content">
+            <h3>Bachelor of Science in Computer Science, [University Name]</h3>
+            <p><em>[Year]</em></p>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
 
  <!-- EXPERIENCE -->
-  <div class="section">
-    <h2 class="section-header">Experience</h2>
-    <div class="section-content">
-      <h3>Software Developer, [Company Name]</h3>
-      <p><em>[Month, Year] - [Month, Year]</em></p>
-      <%# <ul>
-        <li>Developed and maintained web applications using [programming languages/frameworks/tools].</li>
-        <li>Collaborated with cross-functional teams to gather requirements and deliver scalable solutions.</li>
-        <li>Implemented best practices for code quality, performance, and security.</li>
-        <li>Debugged and resolved application issues to ensure seamless functionality.</li>
-      </ul> %>
+<div class="form">
+    <div class="header">
+        <div class="section">
+            <h2 class="section-header">Experience</h2>
+            <div class="section-content">
+            <h3>Software Developer, [Company Name]</h3>
+            <p><em>[Month, Year] - [Month, Year]</em></p>
+            <%# <ul>
+                <li>Developed and maintained web applications using [programming languages/frameworks/tools].</li>
+                <li>Collaborated with cross-functional teams to gather requirements and deliver scalable solutions.</li>
+                <li>Implemented best practices for code quality, performance, and security.</li>
+                <li>Debugged and resolved application issues to ensure seamless functionality.</li>
+            </ul> %>
+            </div>
+        </div>
     </div>
+ </div>           
+            <!-- Add more experience sections if applicable -->
 
-    <!-- Add more experience sections if applicable -->
-  </div>
-  
-  </div>
+
 </body>
 </html>

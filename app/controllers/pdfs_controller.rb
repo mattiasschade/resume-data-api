@@ -3,7 +3,7 @@ require 'httparty'
 
 class PdfsController < ApplicationController
   def generate
-    response = HTTParty.get('http://localhost:3000/students/2.json')
+    response = HTTParty.get('http://localhost:3000/students/10.json')
     data = response.parsed_response
 
     html = render_to_string(template: "pdfs/resume_template", locals: { data: data })
