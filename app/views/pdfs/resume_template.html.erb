@@ -229,8 +229,11 @@ body {
         <div class="section">
             <h2 class="section-header">Experience</h2>
             <div class="section-content">
-            <h3>Software Developer, [Company Name]</h3>
-            <p><em>[Month, Year] - [Month, Year]</em></p>
+
+            <h3><%= data['experience'][0]['company_name'] %> | <%= data['experience'][0]['job_title'] %>
+<span style="float: right"><%= Time.parse(data['experience'][0]['start_date']).strftime("%B %e %Y") %> - <%= Time.parse(data['experience'][0]['end_date']).strftime("%B %e %Y") %></span></h3>
+
+            
             <%# <ul>
                 <li>Developed and maintained web applications using [programming languages/frameworks/tools].</li>
                 <li>Collaborated with cross-functional teams to gather requirements and deliver scalable solutions.</li>
