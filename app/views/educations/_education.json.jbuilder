@@ -6,3 +6,4 @@ json.university_name education.university_name
 json.details education.details
 json.created_at education.created_at
 json.updated_at education.updated_at
+json.student_id education.student_id
