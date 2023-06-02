@@ -26,9 +26,12 @@ json.experience student.experiences do |experience|
   json.company_name experience.company_name
   json.details experience.details
 end
-# json.skills student.skills do |skill|
-#  json.skill_name skill.skill_name
-# end
+
+json.skills student.skills do |skill|
+  json.skill_name skill.skill_name
+end
+
+
 if student.capstone.present?
   json.capstone do
     json.name student.capstone.name

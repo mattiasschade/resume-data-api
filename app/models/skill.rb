@@ -1,3 +1,3 @@
 class Skill < ApplicationRecord
-  has_many :students, through: :student_skills
+  belongs_to :student
 end
