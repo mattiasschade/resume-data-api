@@ -17,6 +17,7 @@ class EducationsController < ApplicationController
       degree: params[:degree],
       university_name: params[:university_name],
       details: params[:details],
+      student_id: current_user.id
     )
     if @education.save
       render :show
@@ -33,6 +34,7 @@ class EducationsController < ApplicationController
       degree: params[:degree]|| @education.degree,
       university_name: params[:university_name] || @education.university_name,
       details: params[:details] || @education.details,
+      student_id: params[:student_id] || @education.student
     )
     @education.save
     render :show

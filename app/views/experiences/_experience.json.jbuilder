@@ -6,3 +6,4 @@ json.company_name experience.company_name
 json.details experience.details
 json.created_at experience.created_at
 json.updated_at experience.updated_at
+json.student_id experience.student_id
