@@ -1,4 +1,4 @@
-## TEAM PURPLE
+## TEAM PURPLE (PDF Renderer)
 ### Install Puppeteer and Dependencies:
 
 ```
