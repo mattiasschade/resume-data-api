@@ -8,8 +8,9 @@ npm install puppeteer
 bundle install
 ```
 
-### If puppeteer related error uninstall puppeteer then reinstall it
+### If Grover::JavaScript::Error ... pops up uninstall puppeteer then reinstall it
 
 ```
 npm uninstall puppeteer
+npm install puppeteer
 ```

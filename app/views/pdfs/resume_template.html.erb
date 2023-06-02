@@ -194,20 +194,16 @@ body {
 </div>
 
 
- <!-- PROJECTS -->
+ <!-- CODING PROJECTS aka capstone -->
 <div class="form">
     <div class="header">
         <div class="section">
             <h2 class="section-header">Coding Projects</h2>
             <div class="section-content">
-            <h3>[Insert Dynamic Project Names Here]</h3>
-            <p><em>[Insert Dynamic Description Here]</em></p>
-            <%# <ul>
-                INSERT DYNAMIC PROJECT DESCRIPTIONS HERE under li of course
-                <li>Implemented [feature] using [technology/stack].</li>
-                <li>Collaborated with [team/colleagues] to deliver [specific outcome].</li>
-                <li>Ensured code quality through [code review/testing].</li>
-            </ul> %>
+            <h3><%= data['capstone']['name'] %></h3>
+            <ul>
+                <li><%= data['capstone']['description'] %></li>
+            </ul>
             </div>
         </div>
     </div>
